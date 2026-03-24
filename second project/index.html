@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Pokémon Summoner</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+</head>
+<body>
+    <header class="command-center">
+    <h1>👾 Pokémon Menagerie</h1>
+        <div class="controls">
+            <input type="text" id="search-bar" placeholder="Filter your Pokémon...">
+            <button id="summon-btn" class="primary-btn">Summon New Pokémon</button>
+            <button id="battle-btn" class="secondary-btn" disabled>Start Battle!</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="battle-arena" class="hidden">
+            <div class="arena-stage">
+                <div id="player-1" class="fighter"></div>
+                <div class="vs">VS</div>
+                <div id="player-2" class="fighter"></div>
+            </div>
+            <div id="combat-log">
+                <p>Welcome to the Arena! Choose your champions.</p>
+            </div>
+            <button id="close-arena">Leave Arena</button>
+        </section>
+
+        <section class="bestiary">
+            <h2 id="empty-msg">The Pokedex is empty. Summon some Pokémon!</h2>
+            <ul id="pokemon-grid">
+                </ul>
+        </section>
+    </main>
+
+    <template id="pokemon-template">
+        <li class="pokemon-card">
+            <div class="card-header">
+                <span class="level-badge">Lvl 1</span>
+                <img src="" alt="pokemon sprite" class="pokemon-img">
+            </div>
+            <div class="card-body">
+                <h3 class="pokemon-name">Name</h3>
+                <p class="pokemon-type">Type: Unknown</p>
+                <div class="stat-bar">
+                    <span>HP</span>
+                    <progress class="hp-bar" value="100" max="100"></progress>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="action-btn level-up">⚡ Level Up</button>
+                <button class="action-btn rename">✏️ Rename</button>
+                <button class="action-btn banish">💀 Banish</button>
+            </div>
+        </li>
+    </template>
+
+
+        <script src='script.js'></script>
+
+    
+</body>
+</html>

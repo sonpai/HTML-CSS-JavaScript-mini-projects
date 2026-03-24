@@ -1,0 +1,242 @@
+:root {
+    --bg: #0f1724;
+    --card: #111827;
+    --accent: #22c55e;
+    --muted: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, Roboto, Arial, sans-serif
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #07142a 0%, #071a20 70%);
+    color: #e6eef8;
+    min-height: 100vh
+}
+
+.command-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+}
+
+.command-center h1 {
+    margin: 0;
+    font-size: 20px
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.controls input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    color: inherit
+}
+
+button.primary-btn,
+button.secondary-btn,
+button.action-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none
+}
+
+button.primary-btn {
+    background: var(--accent);
+    color: #042017
+}
+
+button.secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: inherit
+}
+
+main {
+    padding: 24px
+}
+
+.bestiary {
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+#empty-msg {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 16px
+}
+
+#pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.pokemon-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.card-header img {
+    width: 72px;
+    height: 72px
+}
+
+.level-badge {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 12px
+}
+
+.card-body {
+    margin-top: 8px
+}
+
+.pokemon-name {
+    margin: 0;
+    font-size: 16px
+}
+
+.pokemon-type {
+    margin: 6px 0;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.stat-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.hp-bar {
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px
+}
+
+.action-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    color: inherit;
+    border-radius: 8px;
+    padding: 8px
+}
+
+.pokemon-card.selected {
+    outline: 3px solid rgba(34, 197, 94, 0.18);
+    transform: translateY(-4px)
+}
+
+
+#battle-arena {
+    max-width: 900px;
+    margin: 18px auto;
+    padding: 16px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.arena-stage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px
+}
+
+.fighter {
+    flex: 1;
+    display: flex;
+    justify-content: center
+}
+
+.vs {
+    width: 100px;
+    text-align: center;
+    font-weight: 700
+}
+
+.arena-card {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: transparent;
+    padding: 8px;
+    border-radius: 8px
+}
+
+.arena-img {
+    width: 90px;
+    height: 90px
+}
+
+.arena-info h4 {
+    margin: 0
+}
+
+#combat-log {
+    max-height: 160px;
+    overflow: auto;
+    margin-top: 10px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px
+}
+
+#combat-log p {
+    margin: 6px 0;
+    color: var(--muted)
+}
+
+
+.hidden {
+    display: none
+}
+
+@media (max-width:700px) {
+    .arena-stage {
+        flex-direction: column
+    }
+
+    .vs {
+        width: 100%;
+        margin: 8px 0
+    }
+}
